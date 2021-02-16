@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<samlp:Response ID="respe50e5afc-5eb7-45d9-9701-f7fa9a9cb435" InResponseTo="AE401835D9B0DCD52980F58CCA88F9D09B025C0F" Version="2.0" IssueInstant="2018-05-22T05:22:08.445-07:00" Destination="https://gw-cep-qa.mitchellsmartadvisor.com/SSOGateway3/Handlers/SsoResponseHandler.ashx" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
+  <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">sa.mitchell.guidewire.net</saml:Issuer>
+  <samlp:Status>
+    <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+  </samlp:Status>
+  <saml:Assertion Version="2.0" ID="assertf16671cc-9d9d-4676-b59d-04ff0af8106b" IssueInstant="2018-05-22T12:22:08.446Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <saml:Issuer>sa.mitchell.guidewire.net</saml:Issuer>
+    <saml:Subject>
+      <saml:NameID>su</saml:NameID>
+      <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+        <saml:SubjectConfirmationData NotOnOrAfter="2018-05-22T05:37:08.446-07:00" Recipient="https://gw-cep-qa.mitchellsmartadvisor.com/SSOGateway3/Handlers/SsoResponseHandler.ashx"/>
+      </saml:SubjectConfirmation>
+    </saml:Subject>
+    <saml:Conditions NotBefore="2018-05-22T05:22:08.447-07:00" NotOnOrAfter="2018-05-23T05:22:08.447-07:00">
+      <saml:AudienceRestriction>
+        <saml:Audience>mitchellsmartadvisor.com</saml:Audience>
+      </saml:AudienceRestriction>
+    </saml:Conditions>
+    <saml:AttributeStatement>
+      <saml:Attribute Name="userName">
+        <saml:AttributeValue xsi:type="xs:string">su</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="SiteCode">
+        <saml:AttributeValue xsi:type="xs:string">QA1</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="RelayState">
+        <saml:AttributeValue xsi:type="xs:string">?Referrer=GuideWire&amp;Version=1.0&amp;UserName=su&amp;SrcServer=http://localhost:8080/cc</saml:AttributeValue>
+      </saml:Attribute>
+    </saml:AttributeStatement>
+  </saml:Assertion>
+</samlp:Response>

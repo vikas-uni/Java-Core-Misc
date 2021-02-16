@@ -1,0 +1,33 @@
+import java.awt.*;
+import java.awt.event.*;
+
+
+class Texttest implements ActionListener{
+Frame fr;
+Button b;
+String st[]={"Enter Text","No.of vowels","No. of consonants","No.of Digits","No of spaces"};
+TextField tf;
+Label[] l=new Label[5];
+Texttest(){
+fr=new Frame();
+fr.setSize(400,600);
+fr.setVisible(true);
+b=new Button("calc");
+tf=new TextField();
+tf.setBounds(180,30,200,30);
+for(int i=0,y=30;i<st.length;i++){
+l[i]=new Label(st[i]);
+l[i].setBounds(40,y,120,30);
+y+20;
+}
+b.setBounds(40,350,40,30);
+b.addActionListener(this);
+fr.add(tf);
+fr.add(b);
+for(int i=0,i<st.length;i++){
+fr.add(l[i]);
+}
+public void actionPerformed(ActionEvent e){
+if(e.getSource()==b){
+
+

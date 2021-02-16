@@ -1,0 +1,306 @@
+<Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<IsOK>true</IsOK>
+	<StatusCode>200</StatusCode>
+	<Response>
+		<Claim>
+			<Id>13</Id>
+			<ClaimNumber>000-00-000424</ClaimNumber>
+			<ClaimStatus>O</ClaimStatus>
+			<IsPrivate>false</IsPrivate>
+			<LossInfo>
+				<DateOfLoss>2017-10-31T00:00:00</DateOfLoss>
+				<LossLocationAddress>
+					<IsPreferred xsi:nil="true" />
+					<Type xsi:nil="true" />
+					<StateProvince>CA</StateProvince>
+				</LossLocationAddress>
+			</LossInfo>
+			<Policy>
+				<PolicyNumber>54-586734</PolicyNumber>
+				<PolicyHoldersName>Robert Farley</PolicyHoldersName>
+				<EffectiveDate>2017-08-17T00:00:00</EffectiveDate>
+				<Coverages>
+					<Coverage>
+						<Type>PersonalInjuryProtection</Type>
+						<DeductibleInfo>
+							<Deductible>0.00</Deductible>
+						</DeductibleInfo>
+						<CopayInfo>
+							<CopayPercentage xsi:nil="true" />
+							<CopayMaximum xsi:nil="true" />
+						</CopayInfo>
+						<LimitsInfo>
+							<PolicyLimit xsi:nil="true" />
+						</LimitsInfo>
+						<PayCopayFirst xsi:nil="true" />
+					</Coverage>
+				</Coverages>
+			</Policy>
+			<OrganizationalUnit>
+				<Id>0</Id>
+				<Name />
+				<OfficeNumber>DFLT</OfficeNumber>
+				<Communications>
+					<Address>
+						<IsPreferred xsi:nil="true" />
+						<Type>Unknown</Type>
+						<Address1 />
+						<Address2 />
+						<City />
+						<StateProvince xsi:nil="true" />
+						<PostalCode />
+					</Address>
+					<Phone>
+						<IsPreferred xsi:nil="true" />
+						<Type>Unknown</Type>
+						<Number />
+						<Extension xsi:nil="true" />
+					</Phone>
+				</Communications>
+				<ParentId>0</ParentId>
+				<Children />
+			</OrganizationalUnit>
+			<Adjuster>
+				<Id xsi:nil="true" />
+				<PersonInfo>
+					<Communications />
+					<Name>
+						<Prefixes />
+						<Suffixes />
+					</Name>
+					<BirthDate xsi:nil="true" />
+					<Sex xsi:nil="true" />
+				</PersonInfo>
+				<OfficeId xsi:nil="true" />
+			</Adjuster>
+			<SecurityUser>
+				<Id xsi:nil="true" />
+				<Name>
+					<Prefixes />
+					<Suffixes />
+				</Name>
+				<LoginName />
+				<Status xsi:nil="true" />
+				<Locked xsi:nil="true" />
+				<CreatedDate>0001-01-01T00:00:00</CreatedDate>
+				<Adjuster>
+					<Id xsi:nil="true" />
+					<PersonInfo>
+						<Communications />
+						<Name>
+							<Prefixes />
+							<Suffixes />
+						</Name>
+						<BirthDate xsi:nil="true" />
+						<Sex xsi:nil="true" />
+					</PersonInfo>
+					<OfficeId xsi:nil="true" />
+				</Adjuster>
+			</SecurityUser>
+			<CustomFields>
+				<CustomString>
+					<Id>34</Id>
+					<Value>000-00-000424</Value>
+				</CustomString>
+			</CustomFields>
+			<Claimants>
+				<Claimant>
+					<Id>16</Id>
+					<Suffix>01</Suffix>
+					<IsActive>true</IsActive>
+					<PersonInfo>
+						<Communications>
+							<Address>
+								<IsPreferred xsi:nil="true" />
+								<Type>Unknown</Type>
+								<Address1>503 2nd Ave.</Address1>
+								<Address2 />
+								<City>San Diego</City>
+								<StateProvince>CA</StateProvince>
+								<PostalCode>92101</PostalCode>
+							</Address>
+							<Phone>
+								<IsPreferred xsi:nil="true" />
+								<Type>Unknown</Type>
+								<Number>619-2752346</Number>
+								<Extension xsi:nil="true" />
+							</Phone>
+						</Communications>
+						<Name>
+							<Prefixes />
+							<FirstName>Robert</FirstName>
+							<MiddleName />
+							<LastName>Farley</LastName>
+							<Suffixes />
+						</Name>
+						<BirthDate xsi:nil="true" />
+						<Ssn />
+						<Sex>Unknown</Sex>
+					</PersonInfo>
+					<ParentGuardian>
+						<Communications />
+						<Name>
+							<Prefixes />
+							<FirstName />
+							<LastName />
+							<Suffixes />
+						</Name>
+						<BirthDate xsi:nil="true" />
+						<Sex xsi:nil="true" />
+					</ParentGuardian>
+					<StateOfJurisdiction>CA</StateOfJurisdiction>
+					<Coverage>
+						<Type>PersonalInjuryProtection</Type>
+						<DeductibleInfo>
+							<Deductible>0.00</Deductible>
+						</DeductibleInfo>
+						<CopayInfo>
+							<CopayPercentage>0</CopayPercentage>
+							<CopayMaximum>0.00</CopayMaximum>
+						</CopayInfo>
+						<LimitsInfo>
+							<PolicyLimit>0.00</PolicyLimit>
+						</LimitsInfo>
+						<PayCopayFirst>false</PayCopayFirst>
+					</Coverage>
+					<ClaimId>13</ClaimId>
+					<Claim>
+						<Id>13</Id>
+						<ClaimNumber>000-00-000424</ClaimNumber>
+						<ClaimStatus>O</ClaimStatus>
+						<IsPrivate>false</IsPrivate>
+						<LossInfo>
+							<DateOfLoss>2017-10-31T00:00:00</DateOfLoss>
+							<LossLocationAddress>
+								<IsPreferred xsi:nil="true" />
+								<Type xsi:nil="true" />
+								<StateProvince>CA</StateProvince>
+							</LossLocationAddress>
+						</LossInfo>
+						<Policy>
+							<PolicyNumber>54-586734</PolicyNumber>
+							<PolicyHoldersName>Robert Farley</PolicyHoldersName>
+							<EffectiveDate>2017-08-17T00:00:00</EffectiveDate>
+							<Coverages>
+								<Coverage>
+									<Type>PersonalInjuryProtection</Type>
+									<DeductibleInfo>
+										<Deductible>0.00</Deductible>
+									</DeductibleInfo>
+									<CopayInfo>
+										<CopayPercentage xsi:nil="true" />
+										<CopayMaximum xsi:nil="true" />
+									</CopayInfo>
+									<LimitsInfo>
+										<PolicyLimit xsi:nil="true" />
+									</LimitsInfo>
+									<PayCopayFirst xsi:nil="true" />
+								</Coverage>
+							</Coverages>
+						</Policy>
+						<OrganizationalUnit>
+							<Id>0</Id>
+							<Name />
+							<OfficeNumber>DFLT</OfficeNumber>
+							<Communications>
+								<Address>
+									<IsPreferred xsi:nil="true" />
+									<Type>Unknown</Type>
+									<Address1 />
+									<Address2 />
+									<City />
+									<StateProvince xsi:nil="true" />
+									<PostalCode />
+								</Address>
+								<Phone>
+									<IsPreferred xsi:nil="true" />
+									<Type>Unknown</Type>
+									<Number />
+									<Extension xsi:nil="true" />
+								</Phone>
+							</Communications>
+							<ParentId>0</ParentId>
+							<Children />
+						</OrganizationalUnit>
+						<Adjuster>
+							<Id xsi:nil="true" />
+							<PersonInfo>
+								<Communications />
+								<Name>
+									<Prefixes />
+									<Suffixes />
+								</Name>
+								<BirthDate xsi:nil="true" />
+								<Sex xsi:nil="true" />
+							</PersonInfo>
+							<OfficeId xsi:nil="true" />
+						</Adjuster>
+						<SecurityUser>
+							<Id xsi:nil="true" />
+							<Name>
+								<Prefixes />
+								<Suffixes />
+							</Name>
+							<LoginName />
+							<Status xsi:nil="true" />
+							<Locked xsi:nil="true" />
+							<CreatedDate>0001-01-01T00:00:00</CreatedDate>
+							<Adjuster>
+								<Id xsi:nil="true" />
+								<PersonInfo>
+									<Communications />
+									<Name>
+										<Prefixes />
+										<Suffixes />
+									</Name>
+									<BirthDate xsi:nil="true" />
+									<Sex xsi:nil="true" />
+								</PersonInfo>
+								<OfficeId xsi:nil="true" />
+							</Adjuster>
+						</SecurityUser>
+						<CustomFields>
+							<CustomString>
+								<Id>34</Id>
+								<Value>000-00-000424</Value>
+							</CustomString>
+						</CustomFields>
+						<Claimants />
+					</Claim>
+					<UseClaimDeductible>true</UseClaimDeductible>
+					<OdsParticipant>false</OdsParticipant>
+					<CoordinatedBenefits>false</CoordinatedBenefits>
+					<UseProviderNetwork>true</UseProviderNetwork>
+					<PrecertificationOption>1</PrecertificationOption>
+					<PrecertificationState xsi:nil="true" />
+					<AttorneyRepresentationDate xsi:nil="true" />
+					<Attorney>
+						<Id xsi:nil="true" />
+						<PersonInfo>
+							<Communications />
+							<Name>
+								<Prefixes />
+								<Suffixes />
+							</Name>
+							<BirthDate xsi:nil="true" />
+							<Sex xsi:nil="true" />
+						</PersonInfo>
+						<LawFirmBranch>
+							<Id xsi:nil="true" />
+							<OrganizationInfo>
+								<Communications />
+							</OrganizationInfo>
+						</LawFirmBranch>
+					</Attorney>
+					<CustomFields>
+						<CustomString>
+							<Id>35</Id>
+							<Value>cc:408</Value>
+						</CustomString>
+					</CustomFields>
+				</Claimant>
+			</Claimants>
+		</Claim>
+	</Response>
+</Envelope>

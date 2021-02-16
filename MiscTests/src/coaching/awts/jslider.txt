@@ -1,0 +1,61 @@
+//jslider with color combination assinment. 
+import javax.swing.*; 
+import java.awt.*; 
+import java.awt.event.*; 
+import javax.swing.event.*; 
+class JsliderTest implements ChangeListener 
+{ 
+        JFrame fr; 
+        JSlider s1,s2,s3; 
+        JTextField tb; 
+        Color c1; 
+
+        JsliderTest() 
+        { 
+                fr=new JFrame("Slider Test"); 
+                fr.setLayout(null); 
+                fr.setVisible(true); 
+                fr.setSize(300,300); 
+                s1=new JSlider(0,255); 
+                s2=new JSlider(0,255); 
+                s3=new JSlider(0,255); 
+
+
+                tb=new JTextField(); 
+
+
+                tb.setBounds(30,30,100,50); 
+                s1.setBounds(30,100,100,30); 
+                s2.setBounds(30,140,100,30); 
+                s3.setBounds(30,170,100,30); 
+
+
+                fr.add(tb); 
+                fr.add(s1); 
+                fr.add(s2); 
+                fr.add(s3); 
+
+
+                s1.addChangeListener(this); 
+                s2.addChangeListener(this); 
+                s3.addChangeListener(this); 
+
+
+        } 
+        public void stateChanged(ChangeEvent e) 
+        { 
+
+
+                        int x=s1.getValue(); 
+                        int y=s2.getValue(); 
+                        int z=s3.getValue(); 
+                        c1=new Color(x,y,z); 
+                        String s1=Integer.toString(x); 
+                        tb.setForeground(c1); 
+                        tb.setText(s1); 
+
+
+        } 
+        public static void main(String s[]) 
+        {new JsliderTest();} 
+

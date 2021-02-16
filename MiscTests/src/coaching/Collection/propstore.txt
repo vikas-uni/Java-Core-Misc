@@ -1,0 +1,5 @@
+#this is property file
+#Tue Sep 06 18:03:56 IST 2011
+course=java
+123=abc
+city=noida
