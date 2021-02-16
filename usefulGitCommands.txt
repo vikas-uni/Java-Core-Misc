@@ -1,0 +1,66 @@
+Useful git commands-
+
+git branch -a
+shows available branches
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+git add <file path>
+add the file to commit
+
+git checkout <branch name>
+switch to branch
+
+if error: pathspec 'branch' did not match any file(s) known to git
+then
+git fetch
+git checkout <branch name>
+
+git pull <branch name>
+takes latest codes from specified branch, if no branch is specified, pulls from current branch
+
+git commit -m "commit message"
+commits the code to local repo
+
+git push
+push the local commit to remote repo
+
+git merge <branch name>
+merges code with the specified branch
+
+How to remove local untracked files from the current Git branch
+To remove directories, run git clean -f -d or git clean -fd.
+To remove ignored files, run git clean -f -X or git clean -fX.
+To remove ignored and non-ignored files, run git clean -f -x or git clean -fx.
+
+To revert last push
+https://gist.github.com/gunjanpatel/18f9e4d1eb609597c50c2118e416e6a6
+
+undo local changes-
+git fetch --all
+git reset --hard origin/master
+Note than you will lose ALL your local changes
+
+working with creating/pushing branches-
+https://www.atlassian.com/git/tutorials/using-branches
+
+tagging release-
+git checkout release/1.0.0
+git pull origin release/1.0.0
+git tag -a 1.0.0 -m "Final release 1.0.0"
+git push origin tag 1.0.0
+
+how to pull from a branch ignoring all the conflicts from the master
+git fetch
+git reset --hard origin/master
+If you have local changes that you want to clean, you might have to do the following first:
+git reset --hard
+git clean -df
+
+to revert back to a commit-
+git reset --hard <commit id>
+git push -f
