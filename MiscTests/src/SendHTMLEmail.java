@@ -34,16 +34,16 @@ public class SendHTMLEmail
 	        properties.put("mail.smtp.port", "465");*/
 	        //------------------------------------------ 
 	        
-	        final String user = "vikas.gond@infogain.com";   // username on mail server
+	        final String user = "vikas.gond@abc.com";   // username on mail server
 	        final String password = "9saq@7447"; // user password
 
-	        String fromAddress = "rajeev.nagpal@infogain.com"; // newlycreateduser@localhost
-	        /*String toAddress = "vikas.gond@infogain.com,Sanjeev@infogain.com,Nidhi.Kulkarni@infogain.com,Muskan.Jaiswal@infogain.com," +
-	        		"Deepak.Jaiswal@infogain.com,Sandip.Mandal@infogain.com";*/
-	        String toAddress = "Nidhi.Kulkarni@infogain.com,vikas.gond@infogain.com";
+	        String fromAddress = "rajeev.nagpal@abc.com"; // newlycreateduser@localhost
+	        /*String toAddress = "vikas.gond@abc.com,Sanjeev@abc.com,Nidhi.Kulkarni@abc.com,Muskan.Jaiswal@abc.com," +
+	        		"Deepak.Jaiswal@abc.com,Sandip.Mandal@abc.com";*/
+	        String toAddress = "Nidhi.Kulkarni@abc.com,vikas.gond@abc.com";
 	        
 	        
-	        properties.put("mail.smtp.host", "NODMX.igglobal.com");
+	        properties.put("mail.smtp.host", "SMTP.host.com");
 	        properties.put("mail.transport.protocol", "smtp");
 	        properties.put("mail.smtp.socketFactory.port", "25");
 	       // properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
@@ -77,7 +77,7 @@ public class SendHTMLEmail
 	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toAddress));
 
 	            message.setSubject("Hi");
-	            message.setText("Kya hal hai Mohtarma!!!");
+	            message.setText("Hello!!!");
 	            Transport.send(message);
 
 	            System.out.println("Email sent successfully");
