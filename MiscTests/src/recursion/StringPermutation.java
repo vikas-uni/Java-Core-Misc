@@ -16,7 +16,7 @@ public class StringPermutation {
 
 	private static void permutation(String prefix, String str) {
 		int n = str.length();
-		//System.out.println("incoming: "+prefix +"  "+str);
+		System.out.println("incoming: "+prefix +"  "+str);
 		if (n == 0)
 			System.out.println(prefix);
 		else {
@@ -25,7 +25,7 @@ public class StringPermutation {
 				
 				permutation(prefix + str.charAt(i),	str.substring(0, i) + str.substring(i + 1, n));
 			
-			System.out.println("loop end with i= "+i+"  n= "+n+"   str:"+str);
+			System.out.println("loop end with i= "+i+"  n= "+n+"    prefix:"+prefix+"   str:"+str);
 			}
 		}
 	}

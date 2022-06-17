@@ -12,7 +12,7 @@ public class StreamMapDemo {
 
 		List<Staff> staff = Arrays.asList(new Staff("mkyong", 30, new BigDecimal(10000)),
 				new Staff("jack", 27, new BigDecimal(20000)), new Staff("lawrence", 33, new BigDecimal(30000)));
-
+		
 		// convert inside the map() method directly.
 		//one type of stream is converted to another type of stream
 		Function<Staff, StaffPublic> staffPublicfunction = temp -> {
@@ -25,8 +25,14 @@ public class StreamMapDemo {
 			return obj;
 		};
 		List<StaffPublic> result = staff.stream().map(staffPublicfunction).collect(Collectors.toList());
-
+		
 		System.out.println(result);
+		
+		//filter
+		List<Staff> filtered = staff.stream().filter(s -> s.getName().contains("a")).collect(Collectors.toList());
+		filtered.forEach(s -> System.out.println(s.getName()));
+
+		
 	}
 }
 
@@ -73,7 +79,9 @@ class Staff {
 	private BigDecimal salary;
 
 	public Staff(String string, int i, BigDecimal bigDecimal) {
-		// TODO Auto-generated constructor stub
+		this.name = string;
+		this.age = i;
+		this.salary = bigDecimal;
 	}
 
 	// ...

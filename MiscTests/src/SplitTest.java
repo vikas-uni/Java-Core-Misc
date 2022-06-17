@@ -7,7 +7,6 @@ public class SplitTest {
 			System.out.println(string);
 		}
 		
-		
 		String name = "jean paul sartre";
 		System.out.println(name.substring(0, name.indexOf(" ")));
 		

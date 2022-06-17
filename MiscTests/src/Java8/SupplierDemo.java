@@ -24,14 +24,8 @@ public class SupplierDemo {
 		System.out.println(randomValue.get());
 		
 		Stream<String> names = Stream.of("aBc", "d", "ef");
-		Supplier<LinkedList> collectionFactory = new Supplier() {
-
-			@Override
-			public LinkedList get() {
-				// TODO Auto-generated method stub
-				return new LinkedList();
-			}
-		};
+		Supplier<LinkedList> collectionFactory = () -> new LinkedList();
+			
 		System.out.println(names.map(s -> s.toUpperCase()).collect(Collectors.toCollection(collectionFactory)));
 	}
 }

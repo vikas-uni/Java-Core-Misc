@@ -9,4 +9,11 @@ public class StaticTest {
 //		System.out.println("instance");
 //	}
 
+	public static void main(String[] args) {
+		test();
+		
+		String num = "10.2.3";
+		String[] sp = num.split("\\.");
+		System.out.println(sp[0]);
+	}
 }

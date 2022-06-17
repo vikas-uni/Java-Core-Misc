@@ -28,6 +28,7 @@ public class IteratorTest {
             System.out.println(s);
             if (s.equals("wert")) {
                itr.remove(); 
+               //al.remove(0);  this wil throw java.util.ConcurrentModificationException
             }
             
         }
