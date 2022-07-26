@@ -7,6 +7,7 @@ package socket;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -28,7 +29,14 @@ public class Server {
             ServerSocket ss = new ServerSocket(1050);
             System.out.println("waiting for request");
             Socket st = ss.accept();
-            System.out.println("client connected");
+            
+            InetSocketAddress socketAddress = (InetSocketAddress) st.getRemoteSocketAddress();
+            String clientIpAddress = socketAddress.getAddress()
+            	    .getHostAddress();
+            
+            System.out.println("client connected at: "+"clientIpAddress: "+clientIpAddress
+            		+ " , clientPort: "+socketAddress.getPort() );
+            
             
             DataInputStream din = new DataInputStream(st.getInputStream());
             DataOutputStream dout = new DataOutputStream(st.getOutputStream());
