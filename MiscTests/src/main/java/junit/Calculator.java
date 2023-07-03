@@ -1,4 +1,4 @@
-package com.javacodegeeks.examples.junitmavenexample;
+package junit;
 
 public class Calculator implements ICalculator {
 

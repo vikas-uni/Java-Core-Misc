@@ -1,11 +1,10 @@
-package nagarro.test.db;
+package Java8;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
-public class Test {
+public class ReduceDemo {
 	public static void main(String[] args) {
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
 		int result = numbers
