@@ -32,7 +32,10 @@ class Reader extends Thread {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.setName("calculator");
+        CalculatorTask calculatorTask = new CalculatorTask();
+        calculatorTask.setCalc(calculator);
+        Thread calculatorThread = new Thread(calculatorTask);
+        calculatorThread.setName("calculator");
         
         
 //        Thread t = new Thread(calculator,"Calculator");
@@ -50,6 +53,6 @@ class Reader extends Thread {
         r2.start();
         r3.start();     
         
-        calculator.start();
+        calculatorThread.start();
     }
 }

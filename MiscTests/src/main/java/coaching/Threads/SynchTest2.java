@@ -4,15 +4,15 @@ package coaching.Threads;
 class Resource2 {
 
     int data;
-    boolean b;
+    boolean isProduced;
 
     synchronized void produce() {
         for (int i = 1; i <= 10; i++) {
             try {
-                if (b) {
+                if (isProduced) {
                     wait();         //free the lock
                 }
-                b = true;
+                isProduced = true;
                 data = (int) (Math.random() * 100);
                 System.out.println(data + " value produced");
                 notify();        //make a process out of waiting pool into waiting state
@@ -24,10 +24,10 @@ class Resource2 {
     synchronized void consume() {
         for (int i = 1; i <= 10; i++) {
             try {
-                if (!b) {
+                if (!isProduced) {
                     wait();
                 }
-                b = false;
+                isProduced = false;
                 if (data % 2 == 0) {
                     System.out.println(data + " is even");
                 } else {
@@ -41,8 +41,6 @@ class Resource2 {
 }
 
 class Mythread extends Thread {
-
-    Resource r;
 
     Mythread(String tname) {
         super(tname);

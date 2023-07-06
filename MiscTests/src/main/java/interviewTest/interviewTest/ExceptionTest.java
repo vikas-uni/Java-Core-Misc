@@ -44,7 +44,7 @@ public class ExceptionTest {
 
 }
 
-interface Testinterface{
+interface Testinterface {
 	void test() throws IOException;
 }
 
@@ -61,8 +61,8 @@ class Child extends Parent {
 			File f = new File("");
 		} catch (Exception e) {
 			return;
-		}finally{
-			
+		} finally {
+
 		}
 	}
 }

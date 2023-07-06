@@ -40,7 +40,7 @@ public class FlatMapDemo {
 		
 		System.out.println(listofLists);
 		
-		Function<? super List<String>, ? extends Stream<? extends String>> mapper3 = l -> l.stream();
+		Function<List<String>, Stream<String>> mapper3 = l -> l.stream();
 		List<String> finalList = listofLists.stream().peek(System.out::println).flatMap(mapper3).collect(Collectors.toList());
 		
 		System.out.println(finalList);

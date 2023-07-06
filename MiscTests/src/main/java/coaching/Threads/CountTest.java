@@ -17,6 +17,7 @@ class Count extends Thread {
                 System.out.println(count);
             }
         } catch (InterruptedException e) {
+        	e.printStackTrace();
         }
 
     }
@@ -28,10 +29,11 @@ class CountTest {
         Count c = new Count("counter");
         Thread th = Thread.currentThread();
         try {
-            th.sleep(15000);
+            th.sleep(10000);
             c.interrupt();
 
         } catch (InterruptedException e) {
+        	e.printStackTrace();
         }
 
     }

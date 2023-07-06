@@ -14,91 +14,89 @@ import java.util.logging.Logger;
  */
 public class MyConnection {
 
-    private static boolean havingFree = true;
+	private static boolean havingFree = true;
 
-    private static MyConnection c1 = new MyConnection(1);
-    private static MyConnection c2 = new MyConnection(2);
-    private static MyConnection c3 = new MyConnection(3);
+	private static MyConnection c1 = new MyConnection(1);
+	private static MyConnection c2 = new MyConnection(2);
+	private static MyConnection c3 = new MyConnection(3);
 
-    private boolean busy = false;
+	private boolean busy = false;
 
-    private static MyConnection[] pool = {c1, c2, c3};
-    private int connNum;
+	private static MyConnection[] pool = { c1, c2, c3 };
+	private int connNum;
 
-    private MyConnection(int connNum) {
-        this.connNum = connNum;
-    }
+	private MyConnection(int connNum) {
+		this.connNum = connNum;
+	}
 
-    public static MyConnection getConnection() {
-        MyConnection live = null;
-        if (havingFree) {
+	public static MyConnection getConnection() {
+		MyConnection live = null;
+		if (havingFree) {
 
-            live = getFree();
+			live = getFree();
 
-        }
+		}
 
-        return live;
-    }
+		return live;
+	}
 
-    private static MyConnection getFree() {
-        while (true) {
-            for (MyConnection connection : pool) {
+	private static MyConnection getFree() {
+		while (true) {
+			for (MyConnection connection : pool) {
 
-                if (!connection.isBusy()) {
-                    synchronized (connection) {
-                        if (!connection.isBusy()) {
-                            connection.setBusy(true);
+				if (!connection.isBusy()) {
+					synchronized (connection) {
+						if (!connection.isBusy()) {
+							connection.setBusy(true);
 
-                            return connection;
-                        } else {
-                            try {
-                                connection.wait();
-                            } catch (InterruptedException ex) {
-                                Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                        }
+							return connection;
+						} else {
+							try {
+								connection.wait();
+							} catch (InterruptedException ex) {
+								Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
+							}
+						}
 
-                    }
+					}
 
-                }
-            }
+				}
+			}
 
-        }
+		}
 
-    }
+	}
 
-    public void useConnection() {
-        System.out.println("Using connection " + connNum + " by: " + Thread.currentThread());
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println("Finished using " + connNum + " by: " + Thread.currentThread());
-    }
+	public void useConnection() {
+		System.out.println("Using connection " + connNum + " by: " + Thread.currentThread());
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException ex) {
+			Logger.getLogger(MyConnection.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		System.out.println("Finished using " + connNum + " by: " + Thread.currentThread());
+		release();
+	}
 
-    public boolean isBusy() {
-        return busy;
-    }
+	public boolean isBusy() {
+		return busy;
+	}
 
-    public void setBusy(boolean busy) {
-        this.busy = busy;
+	public void setBusy(boolean busy) {
+		this.busy = busy;
 
-    }
+	}
 
-    public void release() {
-        this.setBusy(false);
-        havingFree = true;
-        synchronized (this) {
-            this.notifyAll();
-        }
-    }
+	private void release() {
+		this.setBusy(false);
+		havingFree = true;
+		synchronized (this) {
+			this.notifyAll();
+		}
+	}
 
-    public static boolean isHavingFree() {
-        return havingFree;
-    }
+	public static boolean isHavingFree() {
+		return havingFree;
+	}
 
-    public static void setHavingFree(boolean havingFree) {
-        MyConnection.havingFree = havingFree;
-    }
 }

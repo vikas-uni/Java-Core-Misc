@@ -5,26 +5,22 @@
  */
 package interviewTest.connPool;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Administrator
  */
 public class ConnUser implements Runnable {
 
-    @Override
-    public void run() {
+	@Override
+	public void run() {
 //        System.out.println(Thread.currentThread()+" Started");
-            MyConnection c = MyConnection.getConnection();
+		MyConnection c = MyConnection.getConnection();
 
-            if (c != null) {               
-                c.useConnection();
-                c.release();
+		if (c != null) {
+			c.useConnection();
+			// c.release();
 
-            }
-        }
-    
+		}
+	}
 
 }
