@@ -18,7 +18,7 @@ class ThreadB extends Thread {
     public void run() {
         synchronized (this) {           //get lock on this object
             System.out.println("got lock by "+Thread.currentThread().getName()+",continuing execution");
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 try {
                     System.out.println(total);
                     total += i;

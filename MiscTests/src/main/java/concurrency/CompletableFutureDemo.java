@@ -1,8 +1,6 @@
 package concurrency;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -15,27 +13,31 @@ public class CompletableFutureDemo {
 		ExecutorService executor = Executors.newFixedThreadPool(2);
 		// Using Lambda Expression
 		Supplier<String> supplier = () -> {
-		    try {
-		    	System.out.println(Thread.currentThread().getName()+" in try");
-		        TimeUnit.SECONDS.sleep(1);
-		    } catch (InterruptedException e) {
-		        throw new IllegalStateException(e);
-		    }
-		    return Thread.currentThread().getName()+" Result of the asynchronous computation";
+			try {
+				System.out.println(Thread.currentThread().getName() + " in try");
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				throw new IllegalStateException(e);
+			}
+			return Thread.currentThread().getName() + " Result of the asynchronous computation";
 		};
-		CompletableFuture<String> future = CompletableFuture.supplyAsync(supplier,executor);
-		
-		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(supplier,executor);
-		
-		CompletableFuture<String> future3 = CompletableFuture.supplyAsync(supplier,executor);
-		
-		System.out.println(Thread.currentThread().getName()+" before thenAccept");
+		CompletableFuture<String> future = CompletableFuture.supplyAsync(supplier, executor);
+
+		CompletableFuture<String> future2 = CompletableFuture.supplyAsync(supplier, executor);
+
+		CompletableFuture<String> future3 = CompletableFuture.supplyAsync(supplier, executor);
+
+		System.out.println(Thread.currentThread().getName() + " before thenAccept");
 		future.thenAccept(a -> System.out.println(a));
-		future2.thenAccept(a -> System.out.println(a+"1"));
-		future3.thenAccept(a -> System.out.println(a+"2"));
-		System.out.println(Thread.currentThread().getName()+" after thenAccept");
-		
+		future2.thenAccept(a -> System.out.println(a + "1"));
+		future3.thenAccept(a -> System.out.println(a + "2"));
+		System.out.println(Thread.currentThread().getName() + " after thenAccept");
+
 		executor.shutdown();
+		System.out.println(Thread.currentThread().getName() + " after shutdown");
+
+		System.out.println("executor isTerminated:" + executor.isTerminated());
+		System.out.println("executor isShutDown:" + executor.isTerminated());
 //		try {
 //			System.out.println(future.get());
 //		} catch (InterruptedException e) {
@@ -46,7 +48,5 @@ public class CompletableFutureDemo {
 //			e.printStackTrace();
 //		}
 	}
-	
-
 
 }

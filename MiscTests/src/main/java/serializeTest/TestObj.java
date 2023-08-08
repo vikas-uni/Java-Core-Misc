@@ -3,7 +3,7 @@ package serializeTest;
 import java.io.Serializable;
 
 public class TestObj implements Serializable {
-	private static long serialVersionUid = 1234567L;
+	private static final long serialVersionUID = 1234567L;
 	int num; 
 	String s;
 	String s2;
