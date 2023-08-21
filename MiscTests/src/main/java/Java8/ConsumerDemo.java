@@ -18,7 +18,6 @@ public class ConsumerDemo {
 
 			@Override
 			public void accept(Integer t) {
-				// TODO Auto-generated method stub
 				System.out.println(t);
 			}
 		};
