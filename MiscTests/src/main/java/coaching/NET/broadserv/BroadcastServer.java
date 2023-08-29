@@ -15,6 +15,12 @@ class BroadcastServer {
             while (true) {
                 Socket st = ss.accept();
                 System.out.println("client connected");
+                InetSocketAddress socketAddress = (InetSocketAddress) st.getRemoteSocketAddress();
+                String clientIpAddress = socketAddress.getAddress()
+                	    .getHostAddress();
+                
+                System.out.println("client connected at: "+"clientIpAddress: "+clientIpAddress
+                		+ " , clientPort: "+socketAddress.getPort() );
                 al.add(st);
                 new ClientThread(st, al);
             }
