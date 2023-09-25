@@ -34,7 +34,7 @@ public class Student implements Serializable {
                 setGrade('D');
             }
         }
-        void show(){
+       public void show(){
             System.out.println(getRollno()+" "+getMarks()+" "+getGrade());
         }
 

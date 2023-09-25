@@ -1,9 +1,12 @@
 package concurrency;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+
+import misc.Student;
 
 //implementation of LRU(least recent used) cache
 public class CustomCacheImpl {
@@ -104,30 +107,58 @@ class EmployeeCache {
 
 }
 
-class CacheData<K, V> {
-	private K key;
-	private V value;
+//other implementation
+class MyCustomLRUcache<K,T> {
 
-	public CacheData(K key, V value) {
-		super();
-		this.key = key;
-		this.value = value;
+	int maxSize = -1;
+	
+	Deque<K> index;
+	Map<K,T> entries;
+	
+	public MyCustomLRUcache(int size){
+		this.maxSize = size;
+		index = new ArrayDeque<>(size);
+		entries = new HashMap<>(size);
 	}
-
-	public K getKey() {
-		return key;
+	
+	public T getFromCache(K id) {
+		if(index.remove(id)) {
+			index.push(id);
+			return entries.get(id);
+		}
+		return null;
 	}
-
-	public void setKey(K key) {
-		this.key = key;
+	
+	public void addToCache(K key,T element){
+		if(index.size() == maxSize) {
+			K last = index.pollLast();
+			entries.remove(last);
+			
+			index.push(key);
+			entries.put(key, element);
+		}else {
+			index.push(key);
+			entries.put(key, element);
+		}
 	}
-
-	public V getValue() {
-		return value;
+	
+	
+	public static void main(String[] args) {
+		Student st1 = new Student("erweq", 1, 14);
+		Student st2 = new Student("terwe", 2, 34);
+		Student st3 = new Student("bcvxcx", 3, 54);
+		Student st4 = new Student("vxc", 4, 74);
+		Student st5 = new Student("ffgsd", 5,15);
+		
+		MyCustomLRUcache<Integer, Student> myCache = new MyCustomLRUcache<>(4);
+		myCache.addToCache(st1.getRollno(), st1);
+		myCache.addToCache(st2.getRollno(), st2);
+		myCache.addToCache(st3.getRollno(), st3);
+		myCache.addToCache(st4.getRollno(), st4);
+		
+		myCache.getFromCache(st2.getRollno()).show();
 	}
-
-	public void setValue(V value) {
-		this.value = value;
-	}
-
+	
 }
+
+
