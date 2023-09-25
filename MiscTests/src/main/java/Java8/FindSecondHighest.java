@@ -9,7 +9,9 @@ public class FindSecondHighest {
 	public static void main(String[] args) {
 		List<Integer> ints = Arrays.asList(3,7,9,18,10);
 		
-		Comparator<Integer> revsort =  (a,b) -> b-a;
+		//Comparator<Integer> revsort =  (a,b) -> b-a;
+		
+		Comparator<Integer> revsort = Comparator.reverseOrder();
 		
 		Integer secondHighest = ints.stream().sorted(revsort).skip(1).findFirst().get();
 		
