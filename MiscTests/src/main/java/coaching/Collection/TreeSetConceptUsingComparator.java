@@ -1,4 +1,4 @@
-package coaching.Collection.collection_aug_27_11;
+package coaching.Collection;
 
 import java.util.Comparator;
 import java.util.TreeSet;
