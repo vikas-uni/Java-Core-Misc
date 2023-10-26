@@ -1,4 +1,4 @@
-package concurrency;
+package interviewTest.interviewTest;
 
 import java.io.BufferedReader;
 import java.io.IOException;

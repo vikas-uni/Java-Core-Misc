@@ -1,4 +1,4 @@
-package concurrency;
+package interviewTest.interviewTest;
 
 public class AddTime {
 	

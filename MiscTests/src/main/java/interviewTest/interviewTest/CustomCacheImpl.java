@@ -1,4 +1,4 @@
-package concurrency;
+package interviewTest.interviewTest;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
