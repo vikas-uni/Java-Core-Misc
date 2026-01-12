@@ -19,7 +19,7 @@ class TreeSetTest2 {
     }
 }
 
-class Students implements Comparable {
+class Students implements Comparable<Students> {
 
     String name;
     int rollno;
@@ -33,7 +33,7 @@ class Students implements Comparable {
         return (name + " " + rollno);
     }
 
-    public int compareTo(Object ob) {              //return -ve value if object is stored in left of root and +ve value if object is stored to right of root
+    public int compareTo(Students ob) {              //return -ve value if object is stored in left of root and +ve value if object is stored to right of root
         Students st = (Students) ob;
         return (rollno - st.rollno);
     }
