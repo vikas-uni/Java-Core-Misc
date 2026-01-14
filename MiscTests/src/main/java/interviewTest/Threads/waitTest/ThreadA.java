@@ -14,9 +14,12 @@ import java.util.logging.Logger;
 class ThreadA {
 
     public static void main(String[] args) {
+    	System.out.println("Thread A created...");
         ThreadB b = new ThreadB();
-        b.setName("ThreadB");
-        b.start();
+        Thread bRunner = new Thread(b);
+        bRunner.setName("ThreadB");
+        bRunner.start();
+        System.out.println("Thread B created and started...");
         
 // wait(), notify(), and notifyAll() must be called from within a synchronized 
 //context! A thread can't invoke a wait or notify method on an object unless it owns 

@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author ADMIN
  */
-class ThreadB extends Thread {
+class ThreadB implements Runnable {
 
     int total;
 
